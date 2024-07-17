@@ -56,7 +56,7 @@ require 'functions.php';
         <h1 class=" my-4 text-center">APLIKASI ARSIP SURAT</h1>
         <h2 class="text-center"><?= $instansi; ?></h2>
         <img class="my-4 mb-4 mx-auto d-block" width="400" src="asset/logo.png">
-        <p class="text-center">Jl. H. Ulakma Sinaga No. 77 Pam. Simalungun<br>Kec. Siantar Kab. Simalungun<br>Sumatera Utara - 21151</p>
+        <p class="text-center">Alamat anda disini sampe ke tingkat kelurahan<br>disini kecamatan dan kabuaten<br>Sumatera Utara - 21151</p>
         <div class="my-5 bg-body-tertiary">
             <footer class="text-center text-lg-start text-dark">
                 <div class="text-center p-3">
