@@ -20,7 +20,7 @@ $halamantengah = ceil($jumlahhalaman / 2);
 $keluar = query("SELECT * FROM keluar ORDER BY id DESC");
 
 if (isset($_POST["cari"])) {
-    $masuk = carikeluar($_POST["keyword"]);
+    $keluar = carikeluar($_POST["keyword"]);
 }
 
 ?>

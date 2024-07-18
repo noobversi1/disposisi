@@ -20,7 +20,7 @@ $halamantengah = ceil($jumlahhalaman / 2);
 $mutasimsk = query("SELECT * FROM mutasimsk ORDER BY id DESC");
 
 if (isset($_POST["cari"])) {
-    $masuk = carimutasimsk($_POST["keyword"]);
+    $mutasimsk = carimutasimsk($_POST["keyword"]);
 }
 
 ?>
