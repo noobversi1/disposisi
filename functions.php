@@ -104,8 +104,8 @@ function tambahmasuk($data)
     global $conn;
 
     $nmr_surat = htmlspecialchars($data["nmr_surat"]);
-    $hal_surat = strtoupper(htmlspecialchars($data["hal_surat"]));
-    $tgl_surat = strtoupper(htmlspecialchars($data["tgl_surat"]));
+    $hal_surat = htmlspecialchars($data["hal_surat"]);
+    $tgl_surat = htmlspecialchars($data["tgl_surat"]);
     $tgl_diterima = htmlspecialchars($data["tgl_diterima"]);
     $pengirim = htmlspecialchars($data["pengirim"]);
     // upload berkas
@@ -147,8 +147,8 @@ function tambahkeluar($data)
     global $conn;
 
     $nmr_surat = htmlspecialchars($data["nmr_surat"]);
-    $hal_surat = strtoupper(htmlspecialchars($data["hal_surat"]));
-    $tgl_surat = strtoupper(htmlspecialchars($data["tgl_surat"]));
+    $hal_surat = htmlspecialchars($data["hal_surat"]);
+    $tgl_surat = htmlspecialchars($data["tgl_surat"]);
     $tujuan = htmlspecialchars($data["tujuan"]);
     // upload berkas
     $berkas = upload();
@@ -189,8 +189,8 @@ function tambahmutasimsk($data)
     global $conn;
 
     $nisn = htmlspecialchars($data["nisn"]);
-    $nm_siswa = strtoupper(htmlspecialchars($data["nm_siswa"]));
-    $asal = strtoupper(htmlspecialchars($data["asal"]));
+    $nm_siswa = htmlspecialchars($data["nm_siswa"]);
+    $asal = htmlspecialchars($data["asal"]);
     $nsm = htmlspecialchars($data["nsm"]);
     $nmr_surat = htmlspecialchars($data["nmr_surat"]);
     $tgl_mutasi = htmlspecialchars($data["tgl_mutasi"]);
@@ -237,9 +237,9 @@ function tambahmutasiklr($data)
     global $conn;
 
     $nisn = htmlspecialchars($data["nisn"]);
-    $nm_siswa = strtoupper(htmlspecialchars($data["nm_siswa"]));
-    $tujuan = strtoupper(htmlspecialchars($data["tujuan"]));
-    $nmr_surat = strtoupper(htmlspecialchars($data["nmr_surat"]));
+    $nm_siswa = htmlspecialchars($data["nm_siswa"]);
+    $tujuan = htmlspecialchars($data["tujuan"]);
+    $nmr_surat = htmlspecialchars($data["nmr_surat"]);
     $tgl_mutasi = htmlspecialchars($data["tgl_mutasi"]);
     $kls_mutasi = htmlspecialchars($data["kls_mutasi"]);
     // upload berkas
@@ -283,8 +283,8 @@ function tambahsk($data)
     global $conn;
 
     $nmr_sk = htmlspecialchars($data["nmr_sk"]);
-    $tentang = strtoupper(htmlspecialchars($data["tentang"]));
-    $tgl_sk = strtoupper(htmlspecialchars($data["tgl_sk"]));
+    $tentang = htmlspecialchars($data["tentang"]);
+    $tgl_sk = htmlspecialchars($data["tgl_sk"]);
     // upload berkas
     $berkas = upload();
     if (!$berkas) {
