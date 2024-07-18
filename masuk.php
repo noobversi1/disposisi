@@ -37,112 +37,10 @@ if (isset($_POST["cari"])) {
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary mb-2">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="index.php"><?= $namaapp; ?></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="masuk.php">Masuk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="keluar.php">Keluar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="mutasimsk.php">Mutasi Masuk</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" href="mutasiklr.php">Mutasi Keluar</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" href="sk.php">Surat Keputusan (SK)</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="true" href="logout.php">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        <?php include 'asset/header.php' ?>
         <a href="tambahmasuk.php" class="my-4 mb-4 btn btn-success">Tambah Surat Masuk</a>
-        <form class="row g-3" action="" method="post">
-            <div class="col-auto">
-                <input class="form-control" type="text" name="keyword" autofocus placeholder="Masukkan Keyword ..." autocomplete="off" id="keyword">
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-primary mb-3" type="submit" name="cari">Cari</button>
-            </div>
-        </form>
-        <nav aria-label="...">
-            <ul class="pagination">
-                <?php if ($jumlahhalaman > 10) : ?>
-                    <?php if ($halamanaktif > 1) : ?>
-                        <li class="page-item">
-                            <a href="?halaman=1" class="page-link"> First </a>
-                        </li>
-                        <li class="page-item">
-                            <a href="?halaman=<?= $halamanaktif - 1; ?>" class="page-link"> &laquo; </a>
-                        </li>
-                    <?php endif; ?>
-                    <?php for ($i = 1; $i <= 3; $i++) : ?>
-                        <?php if ($i == $halamanaktif) : ?>
-                            <li class="page-item active">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php else : ?>
-                            <li class="page-item" aria-current="page">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                    <?php for ($i = $jumlahhalaman - 2; $i <= $jumlahhalaman; $i++) : ?>
-                        <?php if ($i == $halamanaktif) : ?>
-                            <li class="page-item active">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php else : ?>
-                            <li class="page-item" aria-current="page">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                    <?php if ($halamanaktif < $jumlahhalaman) : ?>
-                        <li class="page-item">
-                            <a class="page-link" href="?halaman=<?= $halamanaktif + 1; ?>"> &raquo; </a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="?halaman=<?= $jumlahhalaman; ?>"> Last </a>
-                        </li>
-                    <?php endif; ?>
-                <?php else : ?>
-                    <?php if ($halamanaktif > 1) : ?>
-                        <li class="page-item">
-                            <a class="page-link" href="?halaman=<?= $halamanaktif - 1; ?>">Previous</a>
-                        </li>
-                    <?php endif; ?>
-                    <?php for ($i = 1; $i <= $jumlahhalaman; $i++) : ?>
-                        <?php if ($i == $halamanaktif) : ?>
-                            <li class="page-item active">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php else : ?>
-                            <li class="page-item" aria-current="page">
-                                <a class="page-link" href="?halaman=<?= $i; ?>"><?= $i; ?></a>
-                            </li>
-                        <?php endif; ?>
-                    <?php endfor; ?>
-                    <?php if ($halamanaktif < $jumlahhalaman) : ?>
-                        <li class="page-item">
-                            <a class="page-link" href="?halaman=<?= $halamanaktif + 1; ?>">Next</a>
-                        </li>
-                    <?php endif; ?>
-                <?php endif; ?>
-            </ul>
-        </nav>
-        <p><small>Halaman : <?= $halamanaktif; ?> dari <?= $jumlahhalaman; ?> halaman</small></p>
+        <?php include 'asset/cari.php' ?>
+        <?php include 'asset/pagination.php' ?>
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -175,12 +73,7 @@ if (isset($_POST["cari"])) {
             <?php endforeach; ?>
         </table>
         <div class="my-5 bg-body-tertiary">
-            <footer class="text-center text-lg-start text-dark">
-                <div class="text-center p-3">
-                    Developed by:
-                    <a class="text-dark" href="https://tarigan.web.id/">Tarigan Hosting</a><i><small> - <?= $versi; ?></small></i>
-                </div>
-            </footer>
+            <?php include 'asset/footer.php' ?>
         </div>
     </div>
     <script src="bootstrap\js\bootstrap.bundle.js"></script>

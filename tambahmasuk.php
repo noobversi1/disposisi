@@ -90,12 +90,7 @@ if (isset($_POST["submit"])) {
             </div>
         </div>
         <div class="my-5 bg-body-tertiary">
-            <footer class="text-center text-lg-start text-dark">
-                <div class="text-center p-3">
-                    Developed by:
-                    <a class="text-dark" href="https://tarigan.web.id/">Tarigan Hosting</a><i><small> - <?= $versi; ?></small></i>
-                </div>
-            </footer>
+            <?php include 'asset/footer.php' ?>
         </div>
     </div>
     <script src="bootstrap\js\bootstrap.bundle.js"></script>
