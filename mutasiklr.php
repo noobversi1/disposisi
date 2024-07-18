@@ -39,14 +39,6 @@ if (isset($_POST["cari"])) {
     <div class="container">
         <?php include 'asset/header.php' ?>
         <a href="tambahmutasiklr.php" class="my-4 mb-4 btn btn-success">Tambah Surat Mutasi Keluar</a>
-        <form class="row g-3" action="" method="post">
-            <div class="col-auto">
-                <input class="form-control" type="text" name="keyword" autofocus placeholder="Masukkan Keyword ..." autocomplete="off" id="keyword">
-            </div>
-            <div class="col-auto">
-                <button class="btn btn-primary mb-3" type="submit" name="cari">Cari</button>
-            </div>
-        </form>
         <?php include 'asset/cari.php' ?>
         <?php include 'asset/pagination.php' ?>
         <table class="table table-hover">
